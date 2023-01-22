@@ -1,0 +1,45 @@
+﻿@model DotNetCoreWebApp.Data.Dto.JobDto
+
+@{
+    ViewData["Title"] = "Create Job";
+}
+
+<h4>Job</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">               
+                <label asp-for="JobCode" class="control-label"></label>
+                <input type="text" asp-for="JobCode" class="form-control" required />                
+            </div>            
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input type="text" asp-for="Title" class="form-control" />                
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MinimumQualification" class="control-label"></label>
+                <input type="text"  asp-for="MinimumQualification" required  class="form-control" />
+            </div>
+            
+
+            <div class="form-group">
+                <label asp-for="SortDescription" class="control-label"></label>
+                <input type="text" asp-for="SortDescription" required  class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LastApplyDate" class="control-label"></label>
+                <input type="date" asp-for="LastApplyDate" required class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+               
+            </div>
+        </form>
+    </div>
+</div>

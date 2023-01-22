@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DotNetCoreWebApp.Models.Job>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@if (TempData["AlertMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>@TempData["AlertMessage"]</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+    </div>
+}
+
+<h1>Jobs</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Job Code</th>
+            <th scope="col">Title</th>
+            <th scope="col">Minimum Qualification</th>
+            <th scope="col">Sort Description</th>
+            <th scope="col">Apply Last date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var job in Model)
+        {
+        <tr>
+                <th scope="row">@job.Id</th>
+                <td>@job.JobCode</td>
+                <td>@job.Title</td>
+                <td>@job.MinimumQualification</td>
+                <td>@job.SortDescription</td>
+                <td>@job.LastApplyDate</td>
+                <td>                   
+                    <a asp-action="View" class="btn btn-success" asp-route-id="@job.Id">Edit</a>                                     
+                    <form asp-action="Delete" asp-controller="Job">
+                        <div class="form-group">                            
+                            <input type="hidden" asp-for="@job.Id" class="form-control"  />
+                        </div>                        
+                        <input type="submit"  class="btn btn-danger" value="Delete" />
+                    </form>
+                    
+                </td>
+            
+        </tr>
+        }
+     </tbody>
+     </table>

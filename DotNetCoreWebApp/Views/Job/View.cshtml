@@ -1,0 +1,50 @@
+﻿@model DotNetCoreWebApp.Data.Dto.JobDto
+
+@{
+    ViewData["Title"] = "Edit Job";
+}
+
+<h4>Update Job</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="View">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input type="text" asp-for="Id" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="JobCode" class="control-label"></label>
+                <input type="text" asp-for="JobCode" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input type="text" asp-for="Title" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MinimumQualification" class="control-label"></label>
+                <input type="text" asp-for="MinimumQualification" class="form-control" />
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="SortDescription" class="control-label"></label>
+                <input type="text" asp-for="SortDescription" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LastApplyDate" class="control-label"></label>
+                <input type="date" asp-for="LastApplyDate" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+
+            </div>
+        </form>
+    </div>
+</div>
